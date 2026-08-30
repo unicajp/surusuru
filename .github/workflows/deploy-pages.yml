@@ -1,1 +1,53 @@
+name: Build and Deploy Flutter Web
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: surusuru-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract latest SURUSURU
+        run: |
+          rm -rf app
+          mkdir app
+          unzip -o surusuru_v16_37_5_43_github_actions_pages.zip -d app
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Get dependencies
+        working-directory: app
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        working-directory: app
+        run: flutter build web --release --base-href "/surusuru/"
+
+      - name: Disable Jekyll
+        run: touch app/build/web/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/build/web
+          publish_branch: gh-pages
+          force_orphan: true
