@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_49a_compile_fix.zip -d app
+          unzip -o surusuru_v16_37_5_50_strategy_collision_tsum_battle.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
