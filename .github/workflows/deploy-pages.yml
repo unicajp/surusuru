@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_58_shop_surusu_star_up.zip -d app
+          unzip -o surusuru_v16_37_5_60_star_slightly_up.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
