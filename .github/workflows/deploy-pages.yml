@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_56_global_nav_training.zip -d app
+          unzip -o surusuru_v16_37_5_57_fixed_board_canvas.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
