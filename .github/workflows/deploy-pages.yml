@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_69_bubble_start_fix.zip -d app
+          unzip -o surusuru_v16_37_5_71_modern_ui_refresh_phase1.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
