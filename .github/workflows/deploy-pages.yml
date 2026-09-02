@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_80_tap_push_tsum_pop_battle.zip -d app
+          unzip -o surusuru_v16_37_5_83_monster_rush_boss_phase.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
