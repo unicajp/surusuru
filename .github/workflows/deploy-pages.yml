@@ -25,7 +25,7 @@ jobs:
         run: |
           rm -rf app
           mkdir app
-          unzip -o surusuru_v16_37_5_85_lucky_scratch_title_refresh.zip -d app
+          unzip -o surusuru_v16_37_5_86_pull_aim_wavy_sururu.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
