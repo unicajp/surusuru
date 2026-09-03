@@ -30,7 +30,7 @@ jobs:
           unzip -o surusuru_v16_37_5_91c_fixed_assets_once.zip -d app
 
           echo "=== Apply latest light update ==="
-          unzip -o surusuru_v16_37_5_91e_progress_backtrack_minihero_light.zip -d app
+          unzip -o surusuru_v16_37_5_91f_sword_hit_weight_monsters_light.zip -d app
 
           echo "=== app root ==="
           ls -la app
