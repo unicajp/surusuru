@@ -30,7 +30,7 @@ jobs:
           unzip -o surusuru_v16_37_5_91c_fixed_assets_once.zip -d app
 
           echo "=== Apply latest light update ==="
-          unzip -o surusuru_v16_37_5_91g_long_stage_boss_crates_hp_skill_light.zip -d app
+          unzip -o surusuru_v16_37_5_91h_slow_camera_collision_gesture_actions_light.zip -d app
 
           echo "=== app root ==="
           ls -la app
