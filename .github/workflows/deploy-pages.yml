@@ -30,7 +30,7 @@ jobs:
           unzip -o surusuru_v16_37_5_91c_fixed_assets_once.zip -d app
 
           echo "=== Apply latest light update ==="
-          unzip -o surusuru_v16_37_5_91i_clear_progress_solid_attack_collision_light.zip -d app
+          unzip -o surusuru_v16_37_5_91j_direct_physics_weapon_experiment_light.zip -d app
 
           echo "=== app root ==="
           ls -la app
