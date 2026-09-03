@@ -24,7 +24,7 @@ jobs:
       - name: Extract latest SURUSURU
         run: |
           mkdir app
-          unzip -o surusuru_v16_37_5_91c_light_update.zip -d app
+          unzip -o surusuru_v16_37_5_91e_progress_backtrack_minihero_light.zip -d app
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
