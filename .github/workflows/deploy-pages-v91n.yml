@@ -1,0 +1,71 @@
+name: Build and Deploy Flutter Web
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: surusuru-pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract SURUSURU
+        run: |
+          rm -rf app
+          mkdir app
+
+          echo "=== Extract V91n app base ==="
+          unzip -o surusuru_v16_37_5_91n_fixed_part1_app.zip -d app
+
+          echo "=== Add horizontal 13 sprites ==="
+          unzip -o surusuru_v16_37_5_91n_fixed_part2_horizontal13.zip -d app
+
+          echo "=== Add vertical 10 sprites ==="
+          unzip -o surusuru_v16_37_5_91n_fixed_part3_vertical10.zip -d app
+
+          echo "=== app root ==="
+          ls -la app
+
+          echo "=== hero assets ==="
+          ls -la app/assets/sprites/hero_swordswoman
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Configure Flutter Web
+        working-directory: app
+        run: flutter create . --platforms web
+
+      - name: Get dependencies
+        working-directory: app
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        working-directory: app
+        run: flutter build web --release --base-href "/surusuru/"
+
+      - name: Disable Jekyll
+        run: touch app/build/web/.nojekyll
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./app/build/web
+          publish_branch: gh-pages
+          force_orphan: true
