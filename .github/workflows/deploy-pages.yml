@@ -27,7 +27,7 @@ jobs:
           mkdir app
 
           echo "=== Extract V91n app base ==="
-          unzip -o surusuru_v16_37_5_91n_fixed_part1_app.zip -d app
+          unzip -o surusuru_v16_37_5_91n_fixed_part1_app_ROOT_FIXED.zip -d app
 
           echo "=== Add horizontal 13 sprites ==="
           unzip -o surusuru_v16_37_5_91n_fixed_part2_horizontal13.zip -d app
