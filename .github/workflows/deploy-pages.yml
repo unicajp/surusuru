@@ -36,7 +36,7 @@ jobs:
           unzip -o surusuru_v16_37_5_91n_fixed_part3_vertical10.zip -d app
 
           echo "=== Apply V91o topdown update ==="
-          unzip -o surusuru_v16_37_5_91o_topdown_map_no_techniques_light.zip -d app
+          unzip -o surusuru_v16_37_5_91p_four_elements_adventure_light.zip -d app
 
           echo "=== Verify project ==="
           test -f app/lib/main.dart
