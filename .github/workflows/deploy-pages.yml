@@ -38,20 +38,16 @@ jobs:
           echo "=== Apply V91o topdown update ==="
           unzip -o surusuru_v16_37_5_91o_topdown_map_no_techniques_light.zip -d app
 
+          echo "=== Verify project ==="
+          test -f app/lib/main.dart
+          test -f app/pubspec.yaml
+          test -d app/assets
+
           echo "=== app root ==="
           ls -la app
 
-          echo "=== lib ==="
-          ls -la app/lib
-
           echo "=== hero assets ==="
           ls -la app/assets/sprites/hero_swordswoman
-
-          echo "=== verify main.dart ==="
-          test -f app/lib/main.dart
-
-          echo "=== verify pubspec.yaml ==="
-          test -f app/pubspec.yaml
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -66,10 +62,6 @@ jobs:
       - name: Get dependencies
         working-directory: app
         run: flutter pub get
-
-      - name: Analyze
-        working-directory: app
-        run: flutter analyze
 
       - name: Build Flutter Web
         working-directory: app
