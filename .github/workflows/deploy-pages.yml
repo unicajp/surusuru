@@ -35,11 +35,8 @@ jobs:
           echo "=== Add vertical 10 sprites ==="
           unzip -o surusuru_v16_37_5_91n_fixed_part3_vertical10.zip -d app
 
-          echo "=== Apply V91p adventure update ==="
-          unzip -o surusuru_v16_37_5_91p_four_elements_adventure_light.zip -d app
-
-          echo "=== Apply V91p1 compile fix ==="
-          unzip -o surusuru_v16_37_5_91p1_compile_fix_light.zip -d app
+          echo "=== Apply latest update ==="
+          unzip -o surusuru_latest_light.zip -d app
 
           echo "=== Verify project ==="
           test -f app/lib/main.dart
